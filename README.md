@@ -29,11 +29,6 @@ review of ranking models in general, see Q. Liu et al. (2019b). Crispino
 and Antoniano-Villalobos (2019) outlines how informative priors can be
 used within the model.
 
-Updating of the posterior distribution based on new data, using
-sequential Monte Carlo methods, is implemented and described in a
-separate vignette which can be shown with the command
-`vignette("SMC-Mallows")`.
-
 ## References
 
 <div id="refs" class="references csl-bib-body hanging-indent">
