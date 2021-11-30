@@ -49,43 +49,6 @@ implementation of a variational Bayes algorithm for approximation the
 posterior distribution. The sequential Monte Carlo algorithms will also
 be extended to cover a larger part of the model framework.
 
-## Citation
-
-If using the BayesMallows package in academic work, please cite Sørensen
-et al. (2020), in addition to the relevant methodological papers.
-
-``` r
-citation("BayesMallows")
-#> 
-#> Sørensen Ø, Crispino M, Liu Q, Vitelli V (2020). "BayesMallows: An R
-#> Package for the Bayesian Mallows Model." _The R Journal_, *12*(1),
-#> 324-342. doi: 10.32614/RJ-2020-026 (URL:
-#> https://doi.org/10.32614/RJ-2020-026), <URL:
-#> https://doi.org/10.32614/RJ-2020-026>.
-#> 
-#> A BibTeX entry for LaTeX users is
-#> 
-#>   @Article{,
-#>     author = {{\O}ystein S{\o}rensen and Marta Crispino and Qinghua Liu and Valeria Vitelli},
-#>     doi = {10.32614/RJ-2020-026},
-#>     title = {BayesMallows: An R Package for the Bayesian Mallows Model},
-#>     journal = {The R Journal},
-#>     number = {1},
-#>     pages = {324--342},
-#>     volume = {12},
-#>     url = {https://doi.org/10.32614/RJ-2020-026},
-#>     year = {2020},
-#>   }
-```
-
-## Contribution
-
-This is an open source project, and all contributions are welcome. Feel
-free to open an
-[Issue](https://github.com/ocbe-uio/BayesMallows/issues), a [Pull
-Request](https://github.com/ocbe-uio/BayesMallows/pulls), or to e-mail
-us.
-
 ## References
 
 <div id="refs" class="references csl-bib-body hanging-indent">
