@@ -34,21 +34,6 @@ sequential Monte Carlo methods, is implemented and described in a
 separate vignette which can be shown with the command
 `vignette("SMC-Mallows")`.
 
-### Applications
-
-Among the current applications, Q. Liu et al. (2019a) applied the
-Bayesian Mallows model for providing personalized recommendations based
-on clicking data, and Barrett and Crispino (2018) used the model of
-Crispino et al. (2019) to analyze listeners’ understanding of music.
-
-### Future Extensions
-
-Plans for future extensions of the package include allowing for analysis
-of time-varying ranks as described in Asfaw et al. (2016), and
-implementation of a variational Bayes algorithm for approximation the
-posterior distribution. The sequential Monte Carlo algorithms will also
-be extended to cover a larger part of the model framework.
-
 ## References
 
 <div id="refs" class="references csl-bib-body hanging-indent">
