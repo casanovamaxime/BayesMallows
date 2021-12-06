@@ -10,7 +10,7 @@ coverage](https://codecov.io/gh/ocbe-uio/BayesMallows/branch/master/graph/badge.
 
 This package provides a general framework for analyzing rank and
 preference data based on the Bayesian Mallows model first described in
-[Vitelli et al.(2018)](https://jmlr.org/papers/v18/15-481.html). In particular, we added new datasets to analyse and new priors.
+[Vitelli et al.(2018)](https://jmlr.org/papers/v18/15-481.html). In particular, we added new datasets to analyse.
 
 
 ## The Bayesian Mallows Model
