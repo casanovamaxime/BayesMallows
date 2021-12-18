@@ -80,7 +80,7 @@ plot.BayesMallows <- function(x, burnin = x$burnin, parameter = "alpha", items =
 
     if(x$n_clusters == 1){
       p <- p + ggplot2::facet_wrap(~ .data$item) + ggplot2::theme(legend.position = "none",
-        strip.background = element_rect(colour="black",
+        strip.background = ggplot2::element_rect(colour="black",
                                         fill="white"))
     } else {
       p <- p + ggplot2::facet_wrap(~ .data$cluster + .data$item)
