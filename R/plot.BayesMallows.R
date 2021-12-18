@@ -39,7 +39,7 @@ plot.BayesMallows <- function(x, burnin = x$burnin, parameter = "alpha", items =
   if(parameter == "alpha") {
     df <- dplyr::filter(x$alpha, .data$iteration > burnin)
 
-    p <- ggplot2::ggplot(df, ggplot2::aes(x = .data$value)) +ggplot2::theme_bw(base_size = 14) +
+    p <- ggplot2::ggplot(df, ggplot2::aes(x = .data$value)) +ggplot2::theme_bw(base_size = 14) +  ggplot2::geom_line(size = 1.2) +
       ggplot2::geom_density() +
       ggplot2::xlab(expression(alpha)) +
       ggplot2::ylab("Posterior density")
