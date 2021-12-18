@@ -79,7 +79,7 @@ assess_convergence <- function(model_fit, parameter = "alpha", items = NULL,
 
 trace_alpha <- function(m, clusters){
   # Create the diagnostic plot for alpha
-  p <- ggplot2::ggplot(m, ggplot2::aes(x = .data$iteration, y = .data$value),ggplot2::theme_linedraw()) +
+  p <- ggplot2::ggplot(m, ggplot2::aes(x = .data$iteration, y = .data$value))+ggplot2::theme_linedraw() +
     ggplot2::xlab("Iteration") +
     ggplot2::ylab(expression(alpha))
 
@@ -112,7 +112,7 @@ trace_rho <- function(model_fit, items, clusters = model_fit$n_clusters > 1){
 
   df <- dplyr::filter(model_fit$rho, .data$item %in% items)
 
-  p <- ggplot2::ggplot(df, ggplot2::aes(x = .data$iteration, y = .data$value, color = .data$item),ggplot2::theme_linedraw()) +
+  p <- ggplot2::ggplot(df, ggplot2::aes(x = .data$iteration, y = .data$value, color = .data$item))+ggplot2::theme_linedraw()  +
     ggplot2::geom_line() +
     ggplot2::theme(legend.title = ggplot2::element_blank()) +
     ggplot2::xlab("Iteration") +
@@ -160,7 +160,7 @@ trace_rtilde <- function(model_fit, items, assessors, ...){
   df <- dplyr::mutate(df, assessor = as.factor(.data$assessor))
   levels(df$assessor) <- paste("Assessor", levels(df$assessor))
 
-  ggplot2::ggplot(df, ggplot2::aes(x = .data$iteration, y = .data$value, color = .data$item),ggplot2::theme_linedraw()) +
+  ggplot2::ggplot(df, ggplot2::aes(x = .data$iteration, y = .data$value, color = .data$item))+ggplot2::theme_linedraw() +
     ggplot2::geom_line() +
     ggplot2::facet_wrap(ggplot2::vars(.data$assessor)) +
     ggplot2::theme(legend.title = ggplot2::element_blank()) +
@@ -172,7 +172,7 @@ trace_rtilde <- function(model_fit, items, assessors, ...){
 trace_cluster_probs <- function(m){
 
   ggplot2::ggplot(m, ggplot2::aes(x = .data$iteration, y = .data$value,
-                               color = .data$cluster),ggplot2::theme_linedraw()) +
+                               color = .data$cluster))+ggplot2::theme_linedraw() +
     ggplot2::geom_line() +
     ggplot2::theme(legend.position = "none") +
     ggplot2::xlab("Iteration") +
@@ -189,7 +189,7 @@ trace_theta <- function(model_fit){
     stop("Theta not available. Run compute_mallows with error_model = 'bernoulli'.")
   }
   # Create the diagnostic plot for theta
-  p <- ggplot2::ggplot(model_fit$theta, ggplot2::aes(x = .data$iteration, y = .data$value),ggplot2::theme_linedraw()) +
+  p <- ggplot2::ggplot(model_fit$theta, ggplot2::aes(x = .data$iteration, y = .data$value))+ggplot2::theme_linedraw() +
     ggplot2::xlab("Iteration") +
     ggplot2::ylab(expression(theta)) +
     ggplot2::geom_line()
