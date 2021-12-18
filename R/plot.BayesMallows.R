@@ -39,7 +39,7 @@ plot.BayesMallows <- function(x, burnin = x$burnin, parameter = "alpha", items =
   if(parameter == "alpha") {
     df <- dplyr::filter(x$alpha, .data$iteration > burnin)
 
-    p <- ggplot2::ggplot(df, ggplot2::aes(x = .data$value)) +ggplot2::theme_bw(base_size = 14)  +
+    p <- ggplot2::ggplot(df, ggplot2::aes(x = .data$value)) +ggplot2::theme_bw(base_size = 17)  +
       ggplot2::geom_density(size = 1.2) +
       ggplot2::xlab(expression(alpha)) +
       ggplot2::ylab("Posterior density")
@@ -72,7 +72,7 @@ plot.BayesMallows <- function(x, burnin = x$burnin, parameter = "alpha", items =
     df <- dplyr::mutate(df, pct = .data$n / sum(.data$n))
 
     # Finally create the plot
-    p <- ggplot2::ggplot(df, ggplot2::aes(x = .data$value, y = .data$pct)) +ggplot2::theme_bw(base_size = 14) +
+    p <- ggplot2::ggplot(df, ggplot2::aes(x = .data$value, y = .data$pct)) +ggplot2::theme_bw(base_size = 17) +
       ggplot2::geom_col() +
       ggplot2::scale_x_continuous(labels = scalefun) +
       ggplot2::xlab("rank") +
@@ -90,7 +90,7 @@ plot.BayesMallows <- function(x, burnin = x$burnin, parameter = "alpha", items =
   } else if(parameter == "cluster_probs"){
     df <- dplyr::filter(x$cluster_probs, .data$iteration > burnin)
 
-    ggplot2::ggplot(df, ggplot2::aes(x = .data$value)) +ggplot2::theme_bw(base_size = 14) +
+    ggplot2::ggplot(df, ggplot2::aes(x = .data$value)) +ggplot2::theme_bw(base_size = 17) +
       ggplot2::geom_density() +
       ggplot2::xlab(expression(tau[c])) +
       ggplot2::ylab("Posterior density") +
@@ -113,7 +113,7 @@ plot.BayesMallows <- function(x, burnin = x$burnin, parameter = "alpha", items =
     df <- dplyr::mutate(df, assessor = factor(.data$assessor, levels = assessor_order))
 
     # Now make a plot
-    ggplot2::ggplot(df, ggplot2::aes(.data$assessor, .data$cluster))+ggplot2::theme_bw(base_size = 14) +
+    ggplot2::ggplot(df, ggplot2::aes(.data$assessor, .data$cluster))+ggplot2::theme_bw(base_size = 17) +
       ggplot2::geom_tile(ggplot2::aes(fill = .data$probability)) +
       ggplot2::theme(
         legend.title = ggplot2::element_blank(),
@@ -131,7 +131,7 @@ plot.BayesMallows <- function(x, burnin = x$burnin, parameter = "alpha", items =
 
     df <- dplyr::filter(x$theta, .data$iteration > burnin)
 
-    p <- ggplot2::ggplot(df, ggplot2::aes(x = .data$value)) +ggplot2::theme_bw(base_size = 14) +
+    p <- ggplot2::ggplot(df, ggplot2::aes(x = .data$value)) +ggplot2::theme_bw(base_size = 17) +
       ggplot2::geom_density() +
       ggplot2::xlab(expression(theta)) +
       ggplot2::ylab("Posterior density")
