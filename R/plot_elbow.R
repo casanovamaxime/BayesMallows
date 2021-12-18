@@ -58,7 +58,7 @@ plot_elbow <- function(..., burnin = NULL){
     return(df)
   }))
 
-  ggplot2::ggplot(df, ggplot2::aes(x = as.factor(.data$n_clusters), y = .data$value)) +ggplot2::theme_bw(base_size = 14)  +
+  ggplot2::ggplot(df, ggplot2::aes(x = as.factor(.data$n_clusters), y = .data$value)) +ggplot2::theme_bw(base_size = 17)  +
     ggplot2::geom_boxplot() +
     ggplot2::xlab("Number of clusters") +
     ggplot2::ylab("Within-cluster sum of distances")+ ggplot2::geom_line(size = 1.2)
