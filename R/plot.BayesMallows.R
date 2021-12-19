@@ -83,14 +83,16 @@ plot.BayesMallows <- function(x, burnin = x$burnin, parameter = "alpha", items =
         strip.background = ggplot2::element_rect(colour="black",
                                         fill="white"))
     } else {
-      p <- p + ggplot2::facet_wrap(~ .data$cluster + .data$item)
+      p <- p + ggplot2::facet_wrap(~ .data$cluster + .data$item)+ ggplot2::theme(legend.position = "none",
+        strip.background = ggplot2::element_rect(colour="black",
+                                        fill="white"))
     }
 
     return(p)
   } else if(parameter == "cluster_probs"){
     df <- dplyr::filter(x$cluster_probs, .data$iteration > burnin)
 
-    ggplot2::ggplot(df, ggplot2::aes(x = .data$value)) +ggplot2::theme_bw(base_size = 20) +
+ggplot2::ggplot(df, ggplot2::aes(x = .data$value)) +
       ggplot2::geom_density() +
       ggplot2::xlab(expression(tau[c])) +
       ggplot2::ylab("Posterior density") +
@@ -113,7 +115,7 @@ plot.BayesMallows <- function(x, burnin = x$burnin, parameter = "alpha", items =
     df <- dplyr::mutate(df, assessor = factor(.data$assessor, levels = assessor_order))
 
     # Now make a plot
-    ggplot2::ggplot(df, ggplot2::aes(.data$assessor, .data$cluster))+ggplot2::theme_bw(base_size = 20) +
+    ggplot2::ggplot(df, ggplot2::aes(.data$assessor, .data$cluster)) +
       ggplot2::geom_tile(ggplot2::aes(fill = .data$probability)) +
       ggplot2::theme(
         legend.title = ggplot2::element_blank(),
