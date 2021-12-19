@@ -45,7 +45,9 @@ plot.BayesMallows <- function(x, burnin = x$burnin, parameter = "alpha", items =
       ggplot2::ylab("Posterior density")
 
     if(x$n_clusters > 1){
-      p <- p + ggplot2::facet_wrap(~ .data$cluster, scales = "free_x")
+      p <- p + ggplot2::facet_wrap(~ .data$cluster, scales = "free_x")+ ggplot2::theme(legend.position = "none",
+        strip.background = ggplot2::element_rect(colour="black",
+                                        fill="white"))
     }
 
     return(p)
