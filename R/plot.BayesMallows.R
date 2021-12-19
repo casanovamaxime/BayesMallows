@@ -94,7 +94,7 @@ plot.BayesMallows <- function(x, burnin = x$burnin, parameter = "alpha", items =
   } else if(parameter == "cluster_probs"){
     df <- dplyr::filter(x$cluster_probs, .data$iteration > burnin)
 
-ggplot2::ggplot(df, ggplot2::aes(x = .data$value)) +
+    ggplot2::ggplot(df, ggplot2::aes(x = .data$value)) +
       ggplot2::geom_density() +
       ggplot2::xlab(expression(tau[c])) +
       ggplot2::ylab("Posterior density") +
@@ -135,10 +135,11 @@ ggplot2::ggplot(df, ggplot2::aes(x = .data$value)) +
 
     df <- dplyr::filter(x$theta, .data$iteration > burnin)
 
-    p <- ggplot2::ggplot(df, ggplot2::aes(x = .data$value)) +ggplot2::theme_bw(base_size = 20) +
+    p <- ggplot2::ggplot(df, ggplot2::aes(x = .data$value)) +
       ggplot2::geom_density() +
       ggplot2::xlab(expression(theta)) +
       ggplot2::ylab("Posterior density")
+
 
     return(p)
 
