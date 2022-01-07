@@ -76,7 +76,7 @@ plot.BayesMallows <- function(x, burnin = x$burnin, parameter = "alpha", items =
     # Finally create the plot
     p <- ggplot2::ggplot(df, ggplot2::aes(x = .data$value, y = .data$pct)) +ggplot2::theme_bw(base_size = 20) +
       ggplot2::geom_col() +
-      ggplot2::scale_x_continuous(labels = scalefun) +
+      ggplot2::coord_cartesian(xlim =c(0, 10), ylim = c(-0.1, 1.1))) +
       ggplot2::xlab("rank") +
       ggplot2::ylab("Posterior probability")
 
